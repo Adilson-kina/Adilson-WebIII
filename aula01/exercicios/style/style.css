@@ -3,6 +3,9 @@ body{
   font-size: 1.1rem;
   color:#24273a;
 }
+h1{
+  font-size: 1.2rem;
+}
 .align-center{
   display: flex;
   justify-content: center;
@@ -10,7 +13,7 @@ body{
   width: 98vw;
   height: 90vh;
 }
-form{
+.standard-style{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +24,13 @@ form{
   padding: 6px 8px;
   border-radius: 5px;
 }
-.test{
+.result{
   display: flex;
   justify-content: center;
+}
+
+.imc-table{
+  width: auto;
+  height: 17.5vh;
+  border-radius: 5px;
 }
