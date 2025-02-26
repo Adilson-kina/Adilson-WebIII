@@ -12,12 +12,12 @@
         <input type="number" name="num2" placeholder="Digite outro numero"> <br>
         <input type="submit" name="submit" value="Some">
         <?php
-          $num1 = $_POST["num1"];
-          $num2 = $_POST["num2"];
-          $sqrtNum1 = $num1*$num1;
-          $sqrtNum2 = $num2*$num2;
-          $sqrtSum = $sqrtNum1 + $sqrtNum2;
           if(isset($_POST['submit'])){
+            $num1 = $_POST["num1"];
+            $num2 = $_POST["num2"];
+            $sqrtNum1 = $num1*$num1;
+            $sqrtNum2 = $num2*$num2;
+            $sqrtSum = $sqrtNum1 + $sqrtNum2;
             echo "<div class='result'> O quadrado de ${num1} é: ${sqrtNum1}</div>";
             echo "<div class='result'> O quadrado de ${num2} é: ${sqrtNum2}</div>";
             echo "<div class='result'> A soma dos quadrados é: ${sqrtSum}</div>";

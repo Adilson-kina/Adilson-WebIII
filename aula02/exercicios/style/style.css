@@ -1,0 +1,36 @@
+body{
+  background-color: #c6a0f6;
+  font-size: 1.1rem;
+  color:#24273a;
+}
+h1{
+  font-size: 1.2rem;
+}
+.align-center{
+  display: flex;
+  justify-content: center;
+  align-itens: center;
+  width: 98vw;
+  height: 90vh;
+}
+.standard-style{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-itens: center;
+  background-color:#8aadf4;
+  width: fit-content;
+  height: fit-content;
+  padding: 6px 8px;
+  border-radius: 5px;
+}
+.result{
+  display: flex;
+  justify-content: center;
+}
+
+.imc-table{
+  width: auto;
+  height: 17.5vh;
+  border-radius: 5px;
+}

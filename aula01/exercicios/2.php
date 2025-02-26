@@ -11,9 +11,9 @@
         <input type="number" name="valor" placeholder="Digite um numero"> <br>
         <input type="submit" name="submit" value="Descubra">
         <?php
-          $value = $_POST["valor"];
-          $value_15_percent = $value*0.15;
           if(isset($_POST['submit'])){
+            $value = $_POST["valor"];
+            $value_15_percent = $value*0.15;
             echo "<div class='result'> 15% de ${value} é: ${value_15_percent} </div>";
           }
         ?>

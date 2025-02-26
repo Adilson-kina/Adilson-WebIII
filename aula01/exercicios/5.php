@@ -12,11 +12,11 @@
         <input type="number" name="peso" placeholder="Digite seu peso(kg)"> <br>
         <input type="submit" name="submit" value="Calcular">
         <?php
-          $peso_kg = $_POST["peso"];
-          $altura_m = $_POST["altura"]/100;
-          $imc = $peso_kg/($altura_m * $altura_m);
-          $rounded_imc = round($imc, 2);
           if(isset($_POST['submit'])){
+            $peso_kg = $_POST["peso"];
+            $altura_m = $_POST["altura"]/100;
+            $imc = $peso_kg/($altura_m * $altura_m);
+            $rounded_imc = round($imc, 2);
             if($imc < 18.5){
               echo "<div class='result'>Baixo peso</div>";
             }

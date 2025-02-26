@@ -11,10 +11,10 @@
         <input type="number" name="valor" placeholder="Digite um numero"> <br>
         <input type="submit" name="submit" value="Descubra">
         <?php
-          $value = $_POST["valor"];
-          $value_5_percent = $value*0.05;
-          $value_50_percent = $value*0.5;
           if(isset($_POST['submit'])){
+            $value = $_POST["valor"];
+            $value_5_percent = $value*0.05;
+            $value_50_percent = $value*0.5;
             echo "<div class='result'> 5% de ${value} é: ${value_5_percent} </div>";
             echo "<div class='result'> 50% de ${value} é: ${value_50_percent} </div>";
           }
