@@ -8,7 +8,7 @@
     <div class="align-center">
       <form action="./1.php" method="POST" class="standard-style">
         <h1>Descubra o volume de uma caixa retangular</h1>
-        <input type="number" name="comprimento" placeholder="Digite o comprimenot"> <br>
+        <input type="number" name="comprimento" placeholder="Digite o comprimento"> <br>
         <input type="number" name="altura" placeholder="Digite a altura"> <br>
         <input type="number" name="largura" placeholder="Digite a largura"> <br>
         <input type="submit" name="submit" value="Descubra">
@@ -16,9 +16,12 @@
           
 
           if(isset($_POST['submit'])){
-            $value = $_POST["largura"];
-            $value_15_percent = $alue*0.15;
-            echo "<div class='result'> 15% de ${value} é: ${value_15_percent} </div>";
+            $comprimento = $_POST["comprimento"];
+            $largura = $_POST["largura"];
+            $altura = $_POST["altura"];
+            $volume = $comprimento * $largura * $altura;
+
+            echo "<div class='result'> O volume da caixa retângular é ${volume} </div>";
           }
         ?>
       </form>
