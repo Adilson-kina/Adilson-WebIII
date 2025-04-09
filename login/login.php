@@ -17,7 +17,7 @@ try {
   $query = $conn->prepare("SELECT * FROM usuarios WHERE email = :email AND password = :passwd ");
   $query->bindParam(':email', $user);
   $query->bindParam(':passwd', $userPwd);
-  if(isset($_POST["sub"])){
+  /* if(isset($_POST["sub"])){ */
     $query->execute();
     $result = $query->setFetchMode(PDO::FETCH_ASSOC);
     foreach(new RecursiveArrayIterator($query->fetchAll()) as $row){
@@ -31,7 +31,7 @@ try {
       header("Location:index.php");
       exit();
     }
-  }
+  /* } */
 } catch (PDOException $e) {
   echo "ERROR: ${e}";
 }
