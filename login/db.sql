@@ -3,10 +3,10 @@ use login;
 
 create table usuarios (
   id int not null auto_increment,
-  name varchar(40),
-  login varchar(40) not null,
+  name varchar(40) not null,
+  login varchar(40),
   password varchar(128) not null,
-  email varchar(40),
+  email varchar(40) not null,
   recEmail varchar(40),
   signDate date,
   active bool,
