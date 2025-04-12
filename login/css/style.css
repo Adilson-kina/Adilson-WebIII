@@ -51,6 +51,14 @@
   padding: 5px;
 }
 
+.main-container input:not([type="submit"]):hover{
+  outline: 1px solid var(--mauve);
+}
+
+.main-container input:not([type="submit"]):focus{
+  outline: 1px solid var(--blue);
+}
+
 .main-container input{
   background-color: var(--surface);
   color: var(--subText);
@@ -64,6 +72,12 @@
 
 .main-container input:last-child:hover{
   cursor: pointer;
+  outline: 1px solid var(--mauve);
+}
+
+.main-container input:last-child:active{
+  cursor: pointer;
+  outline: 1px solid var(--mauve);
 }
 
 .main-container a, input:last-child{

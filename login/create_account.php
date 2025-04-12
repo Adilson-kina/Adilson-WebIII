@@ -32,7 +32,7 @@ try {
 
   if($isUserTaken) {
     echo "<script>window.alert('email ja cadastrado')</script>";
-    header("Location:logon.html");
+    header("Location:create_account.html");
     exit();
   }
   else{

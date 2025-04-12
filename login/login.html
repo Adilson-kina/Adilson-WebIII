@@ -12,11 +12,11 @@
       <div class="main-container">
         <form method="POST" action="./login.php">
           <label for="email">Email:</label>
-          <input type="text" name="email" id="login" placeholder="Type your email"></input>
+          <input type="text" name="email" id="login" placeholder="Type your email" required>
           <label for="pwd">Password:</label>
-          <input type="password" name="pwd" id="pwd" placeholder="Type your password"></input>
-          <a href="logon.html">Don't have an account?</a>
-          <input type="submit" name="sub" id="sub" value="Entrar" onClick="isPwdValid()">
+          <input type="password" name="pwd" id="pwd" placeholder="Type your password" required>
+          <a href="create_account.html">Don't have an account?</a>
+          <input type="submit" name="sub" id="sub" value="Entrar" onClick="isPwdWeak()">
         </form>
       </div>
     </div>

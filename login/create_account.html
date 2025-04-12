@@ -10,19 +10,20 @@
   <body>
     <div class="center-container">
       <div class="main-container">
-        <form method="POST" action="./logon.php">
+        <form method="POST" action="./create_account.php">
           <label for="nome">Name:</label>
-          <input type="text" name="nome" id="nome" placeholder="Type your name"></input>
+          <input type="text" name="nome" id="nome" placeholder="Type your name" required>
           <label for="email">Email:</label>
-          <input type="email" name="email" id="email" placeholder="Type your email"></input>
+          <input type="email" name="email" id="email" placeholder="Type your email" required>
           <label for="recovery">Recovery email:</label>
-          <input type="email" name="recovery" id="recovery" placeholder="Type a second recovery email"></input>
+          <input type="email" name="recovery" id="recovery" placeholder="Type a second recovery email" required>
           <label for="pwd">Password:</label>
-          <input type="password" name="pwd" id="pwd" placeholder="Type your password"></input>
+          <input type="password" name="pwd" id="pwd" placeholder="Type your password" required>
           <a href="login.html">Already have an account?</a>
-          <input type="submit" name="sub" id="sub" value="Entrar" onClick="isPwdValid()">
+          <input type="submit" name="sub" id="sub" value="Create Account" onClick="isSubmitable()">
         </div>
       </div>
     </form>
+    <script src="script/script.js"></script>
   </body>
 </html>
