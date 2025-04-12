@@ -24,16 +24,20 @@
   display: flex;
   flex-direction: column;
   background-color: var(--base);
-  width: 50vw;
+  width: 40vw;
   height: fit-content;
   padding: 10px 0 10px 10px;
   border-radius: 10px;
   color: var(--text);
 }
 
+.main-container label{
+  margin-top: 10%;
+}
+
 .main-container form{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
   gap: 5px;
 }
 
@@ -41,15 +45,32 @@
 .main-container input:not([type="submit"]){
   border-radius: 10px;
   border: none;
-  width: 80%;
+  width: 95%;
   padding: 2px;
-  margin: 2px;
+  margin: 2px 5px 2px 0;
   padding: 5px;
+}
+
+.main-container input{
+  background-color: var(--surface);
+  color: var(--subText);
+}
+
+.main-container input:last-child{
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+
+.main-container input:last-child:hover{
+  cursor: pointer;
 }
 
 .main-container a, input:last-child{
   display: block;
   margin: 2px 0 4px;
+  grid-column: 1 / span 2;
+  margin-right: 2%;
 }
 
 .main-container a{

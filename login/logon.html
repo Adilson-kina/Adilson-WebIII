@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
   </head>
   <body>
-    <form method="POST" action="./logon.php">
-      <label for="nome">Nome:</label>
-      <input type="text" name="nome" id="nome"></input>
-      <br>
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email"></input>
-      <br>
-      <label for="recovery">Recovery email:</label>
-      <input type="email" name="recovery" id="recovery"></input>
-      <br>
-      <label for="pwd">Password:</label>
-      <input type="password" name="pwd" id="pwd"></input>
-      <br>
-      <a href="login.html">Já tem uma conta?</a>
-      <br>
-      <input type="submit" name="sub" id="sub" value="Entrar">
+    <div class="center-container">
+      <div class="main-container">
+        <form method="POST" action="./logon.php">
+          <label for="nome">Name:</label>
+          <input type="text" name="nome" id="nome" placeholder="Type your name"></input>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" placeholder="Type your email"></input>
+          <label for="recovery">Recovery email:</label>
+          <input type="email" name="recovery" id="recovery" placeholder="Type a second recovery email"></input>
+          <label for="pwd">Password:</label>
+          <input type="password" name="pwd" id="pwd" placeholder="Type your password"></input>
+          <a href="login.html">Already have an account?</a>
+          <input type="submit" name="sub" id="sub" value="Entrar" onClick="isPwdValid()">
+        </div>
+      </div>
     </form>
   </body>
 </html>
