@@ -8,16 +8,17 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <form method="POST" action="./login.php">
-      <label for="email">Email:</label>
-      <input type="text" name="email" id="login"></input>
-      <br>
-      <label for="pwd">Senha:</label>
-      <input type="password" name="pwd" id="pwd"></input>
-      <br>
-      <a href="logon.html">Não tem uma conta?</a>
-      <br>
-      <input type="submit" name="sub" id="sub" value="Entrar">
-    </form>
+    <div class="center-container">
+      <div class="main-container">
+        <form method="POST" action="./login.php">
+          <label for="email">Email:</label>
+          <input type="text" name="email" id="login" placeholder="Type your email"></input>
+          <label for="pwd">Password:</label>
+          <input type="password" name="pwd" id="pwd" placeholder="Type your password"></input>
+          <a href="logon.html">Não tem uma conta?</a>
+          <input type="submit" name="sub" id="sub" value="Entrar">
+        </form>
+      </div>
+    </div>
   </body>
 </html>
