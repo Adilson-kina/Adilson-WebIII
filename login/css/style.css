@@ -41,7 +41,6 @@
   gap: 5px;
 }
 
-
 .main-container input:not([type="submit"]){
   border-radius: 10px;
   border: none;

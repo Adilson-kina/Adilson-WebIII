@@ -1,9 +1,11 @@
 function isPwdWeak(){
   let pwd = document.getElementById("pwd").value.trim();
+  let input = document.querySelectorAll("input:not([type='submit'])");
   if (!isPwdValid(pwd)) {
-    window.alert("Wrong PWD");
     event.preventDefault();
   }
+  changeMultipleCol(0, 2, input, "1px solid #ed8796");
+  setTimeout(() => changeMultipleCol(0, 2, input, "none"), 2000);
 }
 
 function isSubmitable() {
@@ -16,20 +18,20 @@ function isSubmitable() {
     window.alert(`Your password doesn't meet the requirements and your recovery email is the same as your email`);
     changeMultipleCol(2, 4, input, "1px solid #ed8796");
     setTimeout(() => changeMultipleCol(2, 4, input, "none"), 2000);
+    event.preventDefault();
+  }
+  else if(isEqual(email, recEmail)){
+    window.alert(`Your recovery email is the same as your email`);
+    outlineColor(input, 2, "1px solid #ed8796");
+    setTimeout(() => outlineColor(input, 2, "none"), 2000);
+    event.preventDefault();
   }
   else if(!isPwdValid(pwd)){
     window.alert(`Your password doesn't meet the requirements`);
     outlineColor(input, 3, "1px solid #ed8796");
     setTimeout(() => outlineColor(input, 3, "none"), 2000);
+    event.preventDefault();
   }
-  else if(isEqual(email, recEmail)){
-    window.alert(`Your recovery email is the same as your email`);
-    outlineColor(input, 4, "1px solid #ed8796");
-    setTimeout(() => outlineColor(input, 4, "none"), 2000);
-  }
-
-  window.alert(input);
-  event.preventDefault();
 }
 
 function changeMultipleCol(num1, num2, input, str){

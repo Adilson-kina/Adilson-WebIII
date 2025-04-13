@@ -7,10 +7,14 @@ if (!isset($_COOKIE["login"])) {
 
 
 <?php include "./include/header.php"; ?>
-<p>nice, logged in successfully!</p>
-<form method="POST" action="./index.php">
-  <input type="submit" name="logout" value="logout">
-</form>
+<div class="center-container">
+  <div class="main-container">
+    <h1>nice, logged in successfully!</h1>
+    <form method="POST" action="./index.php">
+      <input type="submit" name="logout" value="logout">
+    </form>
+  </div>
+</div>
 <?php include "./include/footer.php";?>
 
 <?php 
