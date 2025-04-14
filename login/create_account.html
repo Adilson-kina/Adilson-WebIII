@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Create Account</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/reset.css" rel="stylesheet">
-  </head>
-  <body>
+</head>
+<body>
     <div class="center-container">
-      <div class="main-container">
-        <form method="POST" action="./create_account.php">
-          <label for="nome">Name:</label>
-          <input type="text" name="nome" id="nome" placeholder="Type your name" required>
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" placeholder="Type your email" required>
-          <label for="recovery">Recovery email:</label>
-          <input type="email" name="recovery" id="recovery" placeholder="Type a second recovery email" required>
-          <label for="pwd">Password:</label>
-          <input type="password" name="pwd" id="pwd" placeholder="Type your password" required>
-          <a href="login.html">Already have an account?</a>
-          <input type="submit" name="sub" id="sub" value="Create Account" onClick="isSubmitable()">
+        <div class="main-container">
+            <form method="POST" action="./create_account.php">
+                <label for="nome">Name:</label>
+                <input type="text" name="nome" id="nome" class="user-input" placeholder="Type your name" required>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="user-input" placeholder="Type your email" required>
+                <label for="recovery">Recovery email:</label>
+                <input type="email" name="recovery" id="recovery" class="user-input" placeholder="Type a second recovery email" required>
+                <label for="pwd">Password:</label>
+                <input type="password" name="pwd" id="pwd" class="user-input" placeholder="Type your password" required>
+                <a href="login.html">Already have an account?</a>
+                <input type="submit" name="sub" id="sub" value="Create Account" onClick="isSubmitable()">
+            </form>
         </div>
-      </div>
-    </form>
+    </div>
     <script src="script/script.js"></script>
-  </body>
+</body>
 </html>

@@ -1,102 +1,98 @@
 /* Catppuccin Macchiato Color Theme variable declaration */
 :root{
-  --mauve: #c6a0f6;
-  --blue: #8aadf4;
-  --peach: #f5a97f;
-  --pink: #f5bde6;
-  --red: #ed8796; 
-  --text: #cad3f5;
-  --subText: #b8c0e0;
-  --base: #24273a;
-  --surface: #363a4f;
+    --mauve: #c6a0f6;
+    --blue: #8aadf4;
+    --peach: #f5a97f;
+    --pink: #f5bde6;
+    --red: #ed8796; 
+    --text: #cad3f5;
+    --subText: #b8c0e0;
+    --base: #24273a;
+    --surface: #363a4f;
 }
 
 .center-container{
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--surface);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--surface);
 }
 
 .main-container{
-  display: flex;
-  flex-direction: column;
-  background-color: var(--base);
-  width: 40vw;
-  height: fit-content;
-  padding: 10px 0 10px 10px;
-  border-radius: 10px;
-  color: var(--text);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--base);
+    width: 40vw;
+    height: fit-content;
+    padding: 10px 0 10px 10px;
+    border-radius: 10px;
+    color: var(--text);
 }
 
 .main-container label{
-  margin-top: 10%;
+    margin-top: 10%;
 }
 
 .main-container form{
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 5px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px;
 }
 
-.main-container input:not([type="submit"]){
-  border-radius: 10px;
-  border: none;
-  width: 95%;
-  padding: 2px;
-  margin: 2px 5px 2px 0;
-  padding: 5px;
+.user-input{
+    border-radius: 10px;
+    border: none;
+    width: 95%;
+    padding: 5px;
+    margin: 2px 5px 2px 0;
+    background-color: var(--surface);
+    color: var(--subText);
 }
 
-.main-container input:not([type="submit"]):hover{
-  outline: 1px solid var(--mauve);
+.user-input:hover{
+    outline: 1px solid var(--mauve);
 }
 
-.main-container input:not([type="submit"]):focus{
-  outline: 1px solid var(--blue);
+.user-input:focus{
+    outline: 1px solid var(--blue);
 }
 
-.main-container input{
-  background-color: var(--surface);
-  color: var(--subText);
+.main-container #sub{
+    border: none;
+    border-radius: 5px;
+    padding: 5px 0;
+    margin: 2px 2% 4px 0;
+    color: var(--subText);
+    background-color: var(--surface);
+    grid-column: 1 / span 2;
+    transition: outline 0.4s;
 }
 
-.main-container input:last-child{
-  border: none;
-  border-radius: 5px;
-  padding: 5px 0;
+.main-container #sub:hover{
+    cursor: pointer;
+    outline: 1px solid var(--mauve);
 }
 
-.main-container input:last-child:hover{
-  cursor: pointer;
-  outline: 1px solid var(--mauve);
-}
-
-.main-container input:last-child:active{
-  cursor: pointer;
-  outline: 1px solid var(--mauve);
-}
-
-.main-container a, input:last-child{
-  display: block;
-  margin: 2px 0 4px;
-  grid-column: 1 / span 2;
-  margin-right: 2%;
+.main-container #sub:active{
+    outline: 1px solid var(--red);
 }
 
 .main-container a{
-  color: var(--text);
-  text-decoration-color: var(--red);
-  text-decoration-thickness: 2px;
-  font-size: 1.05rem;
-  margin: 2px 0 6px;
-  transition: 0.4s;
-  width: fit-content;
+    color: var(--text);
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 2px;
+    font-size: 1.05rem;
+    margin: 2px 0 6px;
+    transition: 0.4s;
+    width: fit-content;
 }
 
 .main-container a:hover{
-  text-decoration-color: var(--blue);
+    text-decoration-color: var(--blue);
 }
 
+.main-container a:active{
+    text-decoration-color: var(--mauve);
+}

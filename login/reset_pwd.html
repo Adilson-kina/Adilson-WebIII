@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/reset_pwd.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="center-container">
+      <div class="main-container">
+        <form method="POST" action="reset_pwd.php">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" class="user-input" placeholder="Type your email">
+          <label for="code" class="code" >Verification code</label>
+          <input type="text" name="code" id="code" class="user-input code" placeholder="Type the code you received">
+          <a href="login.html">Go back</a>
+          <input type="submit" name="sub" id="sub" value="Enviar email" onClick="send()">
+        </form>
+      </div>
+    </div>
+    <script src="script/reset_pwd.js"></script>
+  </body>
+</html>

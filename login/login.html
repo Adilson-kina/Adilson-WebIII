@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Login</title>
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
+</head>
+<body>
     <div class="center-container">
-      <div class="main-container">
-        <form method="POST" action="./login.php">
-          <label for="email">Email:</label>
-          <input type="text" name="email" id="login" placeholder="Type your email" required>
-          <label for="pwd">Password:</label>
-          <input type="password" name="pwd" id="pwd" placeholder="Type your password" required>
-          <a href="create_account.html">Don't have an account?</a>
-          <input type="submit" name="sub" id="sub" value="Entrar" onClick="isPwdWeak()">
-        </form>
-      </div>
+        <div class="main-container">
+            <form method="POST" action="./login.php">
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="login" class="user-input" placeholder="Type your email" required>
+                <label for="pwd">Password:</label>
+                <input type="password" name="pwd" id="pwd" class="user-input" placeholder="Type your password" required>
+                <a href="create_account.html">Don't have an account?</a>
+                <a href="reset_pwd.html">Forgot your password?</a>
+                <input type="submit" name="sub" id="sub" value="Entrar" onClick="isPwdWeak()">
+            </form>
+        </div>
     </div>
     <script src="script/script.js"></script>
-  </body>
+</body>
 </html>
