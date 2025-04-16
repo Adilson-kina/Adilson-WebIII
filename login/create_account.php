@@ -1,9 +1,6 @@
 <?php 
 
-$db = "login";
-$host = "localhost";
-$dbUser = "root";
-$dbPwd = "";
+require "config/config.php";
 
 $active = 1;
 $level = 1;
@@ -11,22 +8,13 @@ $signDate = date("Y-m-d");
 $isUserTaken = false;
 $login = "placeholder";
 
-$name = $_POST["nome"];
-$email = $_POST["email"];
-$recEmail = $_POST["recovery"];
-$pwd = $_POST["pwd"];
-
 
 try {
-  $conn = new PDO("mysql:host=$host;dbname=$db", $dbUser, $dbPwd);
-  // error mode to exception to be catchabe
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-  $query = $conn->prepare("SELECT * FROM usuarios WHERE email = :email");
+  $query = $conn->prepare("SELECT email FROM usuarios WHERE email = :email");
   $query->bindParam(":email", $email);
   $query->execute();
   $query->setFetchMode(PDO::FETCH_ASSOC);
-  $isUserTaken = (bool) $query->fetchAll();
+  $isUserTaken = (bool) $query->fetch();
 
   if($isUserTaken) {
     echo "<script>window.alert('email ja cadastrado')</script>";

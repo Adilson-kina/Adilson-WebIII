@@ -1,20 +1,13 @@
 <?php 
 
-$db = "login";
-$host = "localhost";
-$dbUser = "root";
-$dbPwd = "";
-
 $user = trim($_POST["email"]);
 $userPwd = trim($_POST["pwd"]);
 $verify = false;
 
-try {
-  $conn = new PDO("mysql:host=$host;dbname=$db", $dbUser, $dbPwd);
-  // error mode to exception to be catchabe
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+require "include/config.php";
 
-  $query = $conn->prepare("SELECT password, name, email FROM usuarios WHERE email = :email");
+try {
+  $query = $conn->prepare("SELECT password, name FROM usuarios WHERE email = :email");
   $query->bindParam(':email', $user);
   $query->execute();
   $query->setFetchMode(PDO::FETCH_ASSOC);
