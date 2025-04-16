@@ -34,33 +34,28 @@ if(!isset($_COOKIE["canChangePwd"])) {
 
 
 <?php 
-$db = "login";
-$host = "localhost";
-$dbUser = "root";
-$dbPwd = "";
+require "include/config.php";
 
 $email = $_COOKIE["whereChange"];
 
 try {
-  $conn = new PDO("mysql:host=$host;dbname=$db", $dbUser, $dbPwd);
-  // error mode to exception to be catchabe
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   if (isset($_POST["sub"])) {
     $pwd = trim($_POST["pwd"]);
     $pwd2 = trim($_POST["pwd2"]);
+
     if($pwd == $pwd2){
       $query = $conn->prepare("UPDATE usuarios SET password = :pwd WHERE email = :email");
       $query->bindParam(':email', $email);
       $query->bindParam(':pwd', $pwd);
       $query->execute();
       header("Location:login.html");
+      exit();
     }
     else{
       echo "<script>alert('the first password doesnt match the second')</script>";
     }
   }
-
 
 } catch (PDOException $e) {
   echo "ERROR: ${e}";

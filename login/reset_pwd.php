@@ -5,30 +5,24 @@ use PHPMailer\PHPMailer\SMTP;
 
 error_reporting(E_ALL);
 
-$db = "login";
-$host = "localhost";
-$dbUser = "root";
-$dbPwd = "";
+require "include/config.php";
 
 $email = $_POST["email"];
 $inputCode = isset($_POST["inputCode"]) ? $_POST["inputCode"] : "none";
 
 try {
-  $conn = new PDO("mysql:host=$host;dbname=$db", $dbUser, $dbPwd);
-  // error mode to exception to be catchabe
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+  session_start();
   $query = $conn->prepare("SELECT recEmail FROM usuarios WHERE email = :email");
   $query->bindParam(':email', $email);
   $query->execute();
   // Makes the query return an array without an index for every column
   $query->setFetchMode(PDO::FETCH_ASSOC);
-  $query->fetchAll();
-  $verify = (bool) $result;
+  $query->fetch();
+  $verify = (bool) $query;
 
   if($verify && $inputCode == "none"){
     $code = rand(100000, 999999);
-    setcookie("recoveryCode", $code, time() + 300);
+    $_SESSION("code", $code);
     sendEmail($email, $code);
     setcookie("isSuccess", true, time() + 60);
   }

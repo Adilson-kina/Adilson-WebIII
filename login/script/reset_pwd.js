@@ -13,7 +13,7 @@ function send(){
         input[1].style.display = 'inline';
       }
       else{
-        alert("pretty bad");
+        alert("pretty bad this email isn't in the database");
       }
     }
 
