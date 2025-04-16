@@ -1,5 +1,6 @@
 <?php 
-if (!isset($_COOKIE["login"])) {
+session_start();
+if (!isset($_SESSION["name"])) {
   header("Location: login.html");
   exit();
 }

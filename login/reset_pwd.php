@@ -23,7 +23,7 @@ try {
   $query->execute();
   // Makes the query return an array without an index for every column
   $query->setFetchMode(PDO::FETCH_ASSOC);
-  $result = $query->fetchAll();
+  $query->fetchAll();
   $verify = (bool) $result;
 
   if($verify && $inputCode == "none"){

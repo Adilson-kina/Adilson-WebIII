@@ -9,7 +9,7 @@ $active = 1;
 $level = 1;
 $signDate = date("Y-m-d");
 $isUserTaken = false;
-$login = "hi";
+$login = "placeholder";
 
 $name = $_POST["nome"];
 $email = $_POST["email"];
@@ -25,10 +25,8 @@ try {
   $query = $conn->prepare("SELECT * FROM usuarios WHERE email = :email");
   $query->bindParam(":email", $email);
   $query->execute();
-  $res = $query->setFetchMode(PDO::FETCH_ASSOC);
-  foreach(new RecursiveArrayIterator($query->fetchAll()) as $row){
-    $isUserTaken = true;
-  }
+  $query->setFetchMode(PDO::FETCH_ASSOC);
+  $isUserTaken = (bool) $query->fetchAll();
 
   if($isUserTaken) {
     echo "<script>window.alert('email ja cadastrado')</script>";
