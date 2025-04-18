@@ -1,6 +1,10 @@
 <?php 
 
-require "config/config.php";
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require "include/config.php";
 
 $active = 1;
 $level = 1;
@@ -9,12 +13,17 @@ $isUserTaken = false;
 $login = "placeholder";
 
 
+$name = $_POST["nome"];
+$email = $_POST["email"];
+$recEmail = $_POST["recovery"];
+$pwd = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
+
 try {
   $query = $conn->prepare("SELECT email FROM usuarios WHERE email = :email");
   $query->bindParam(":email", $email);
-  $query->execute();
   $query->setFetchMode(PDO::FETCH_ASSOC);
-  $isUserTaken = (bool) $query->fetch();
+  $res = $query->execute();
+  $isUserTaken = (isset($res['email'])) ? true : false;
 
   if($isUserTaken) {
     echo "<script>window.alert('email ja cadastrado')</script>";

@@ -15,4 +15,4 @@ create table usuarios (
 );
 
 insert into usuarios (name, login, password, email, recEmail, signDate, active, level) values
-("joao", "joao", "1234", "joaosembraco@gmail.com", "batatassada@gmail.com", "2024-03-04", true, 1);
+("joao", "joao", "$2y$10$hggmlCtlHQLVcC8OrZjl0.xueUFC/D.EsVxlOLVIpXC4kBHVaxh7u", "joaosembraco@gmail.com", "batatassada@gmail.com", "2024-03-04", true, 1);

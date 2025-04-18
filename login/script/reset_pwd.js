@@ -1,68 +1,68 @@
-let x = 0;
+import { isPwdWeak } from "./script.js";
 
-function send(){
+let showCode = false;
+
+async function send(){
   event.preventDefault();
-  if(x <= 0){
-    let email = document.getElementById("email").value;
-    let xhttp = new XMLHttpRequest();
-    xhttp.onload = function () {
-      if(getCookie("isSuccess") == true){
-        let input = document.getElementsByClassName('code');
-        document.getElementById('sub').innerHTML = "Enviar código";
-        input[0].style.display = 'inline';
-        input[1].style.display = 'inline';
+  if(!isPwdWeak()){
+    if(showCode == false){
+      let email = document.getElementById("email").value;
+      console.log("Email value:", email);
+      let status = await post(`email=${encodeURIComponent(email)}`);
+      let inputCode = document.getElementsByClassName('code');
+      let inputEmail = document.getElementsByClassName('email');
+      if(status == "ok"){
+        for(let i = 0; i < 2; i++){
+          inputEmail[i].style.display = 'none';
+          inputCode[i].style.display = 'inline';
+        }
+        document.getElementById('sub').value = "Enviar código";
+        showCode = true;
       }
       else{
-        alert("pretty bad this email isn't in the database");
+        inputEmail[1].style.outline = "1px solid #ed8796";
       }
-    }
-
-    xhttp.open("POST", "reset_pwd.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("email=" + encodeURIComponent(email));
-    x++;
-  }
-  else{
-    let code = document.getElementById("code").value.trim();
-    let email = document.getElementById("email").value;
-    let xhttp = new XMLHttpRequest();
-    xhttp.onload = function () {
-      if(code == getCookie('recoveryCode').trim()){
-        document.cookie = "canChangePwd=true; path=/";
+    } 
+    else{
+      let code = document.getElementById("code").value.trim();
+      let status = await post(`inputCode=${code}`);
+      if(status == "verified"){
         window.location.href = "newpwd.php";
       }
-      else{
-        alert("what a pity it doesnt match");
-      }
     }
-
-    xhttp.open("POST", "reset_pwd.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("email=" + encodeURIComponent(email) + "&inputCode=" + encodeURIComponent(code));
+  }
+  else{
+    alert("pwd weak");
   }
 }
 
+/*
+#####################
+### POST FUNCTION ###
+#####################
+*/ 
 
-// LLM made function
-function getCookie(name) {
-  const cookieString = document.cookie;
-  if (!cookieString) {
-    return null;
-  }
-
-  const cookies = cookieString.split(';');
-  for (let i = 0; i < cookies.length; i++) {
-    let cookie = cookies[i].trim(); // Remove leading/trailing spaces
-    if (cookie.startsWith(name + '=')) {
-      let cookieValue = cookie.substring(name.length + 1);
-      try {
-        //attempt to decode the cookie value.
-        cookieValue = decodeURIComponent(cookieValue);
-      } catch (e) {
-        //if decoding fails, leave the value as is.
-      }
-      return cookieValue;
+async function post(data){
+  const server = "reset_pwd.php";
+  try{
+    const res = await fetch(server, {
+      method: 'POST',
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded"
+      },
+      body: data
+    });
+    if(res.ok){
+      const result = await res.json();
+      console.log("Server response:", result);
+      return result.status;
     }
+    else{
+      console.log(`Server error`);
+      return false;
+    }
+  } catch(err){
+    console.log(`Fetch error: ${err}`);
+    return false;
   }
-  return null;
 }

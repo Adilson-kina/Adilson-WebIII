@@ -12,7 +12,7 @@ try {
   $query->execute();
   $query->setFetchMode(PDO::FETCH_ASSOC);
   $res = $query->fetch();
-  $verify = (isset($res['password'])) ? ($res['password'] == $userPwd) : false;
+  $verify = (isset($res['password'])) ? (password_verify($userPwd, $res['password'])) : false;
   if ($verify) {
       session_start();
       $_SESSION["name"] = $res['name'];
