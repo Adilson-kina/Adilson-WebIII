@@ -26,7 +26,7 @@ try {
     $code = rand(100000, 999999);
     $_SESSION["code"] = $code;
     $_SESSION["isEmailValid"] = true;
-    sendEmail($res["recEmail"], $code);
+    /* sendEmail($res["recEmail"], $code); */
   }
   else if($inputCode == $_SESSION["code"] && $_SESSION["isEmailValid"]){
     $_SESSION["name"] = $res["name"];

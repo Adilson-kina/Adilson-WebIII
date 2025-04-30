@@ -9,7 +9,7 @@ try {
   //Set error mode to PDOException 
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-  echo "ERROR: ${e}";
+  echo "ERROR: {$e}";
 }
 ?>
 
