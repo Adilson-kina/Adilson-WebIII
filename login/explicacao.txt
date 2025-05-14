@@ -1,0 +1,41 @@
+MVC -> Model View Controller
+
+Tela de login -> Tem.
+Cadastro de Produto -> Era para ter.
+
+CRUD de Produto -> Fazer
+CRUD Cliente -> Fazer
+
+DB
+
+Cliente
+- ID
+- NOME
+- EMAIL
+
+Vendedor
+- ID
+- NOME
+- COMISSÃO
+
+Tabela Pedido
+- ID           PK
+- NUMERO
+- DATA
+
+Tabela PedDetalhe
+- ID           
+- COBRADO
+- VALOR
+- ID PEDIDO    FK
+
+
+
+
+
+EX:
+no cadastro de produto deve ter caderno e borracha 
+
+qnt prod           prec IMCS
+01  caderno de 200 R$70 1
+01  borracha branc R$2  0

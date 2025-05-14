@@ -1,4 +1,4 @@
-export function isPwdWeak(){
+function isPwdWeak(){
     let pwd = document.getElementById("pwd").value.trim();
     let input = document.querySelectorAll(".user-input");
     if (!isPwdValid(pwd)) {
