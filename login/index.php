@@ -25,9 +25,9 @@ if (!isset($_SESSION["name"])) {
       </form>
       <div class="CRUD-container">
         <button class="CRUD" onclick="window.location.href='create.php'">Create user</button>
-        <button class="CRUD">View users</button>
-        <button class="CRUD">Update user</button>
-        <button class="CRUD">Delete users</button>
+        <button class="CRUD" onclick="window.location.href='read.php'">View users</button>
+        <button class="CRUD" onclick="window.location.href='update.php'">Update user</button>
+        <button class="CRUD" onclick="window.location.href='delete.php'">Delete users</button>
       </div>
     </div>
   </div>

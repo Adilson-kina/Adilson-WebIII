@@ -18,7 +18,9 @@ if (!isset($_SESSION["name"])) {
 <body>
     <div class="center-container">
         <div class="main-container">
-          <form method="POST" action="./create.php">
+          <form method="POST" action="./update.php">
+              <label for="id">ID:</label>
+              <input type="text" name="id" id="id" class="user-input" placeholder="Enter the id to be edited" required>
               <label for="nome">Name:</label>
               <input type="text" name="nome" id="nome" class="user-input" placeholder="Enter your full name" required>
               <label for="address">Address:</label>
@@ -46,6 +48,7 @@ if (!isset($_SESSION["name"])) {
 if (isset($_POST['sub'])) {
     require "include/config.php";
 
+    $id = $_POST['id'];
     $name = $_POST['nome'];
     $address = $_POST['address'];
     $neighborhood = $_POST['neighborhood'];
@@ -57,17 +60,27 @@ if (isset($_POST['sub'])) {
     $phone = $_POST['phone'];
 
     try {
-        $query = $conn->prepare("SELECT email FROM cliente WHERE email = :email");
-        $query->bindParam(":email", $email);
+        $query = $conn->prepare("SELECT id_cliente FROM cliente WHERE id_cliente = :id");
+        $query->bindParam(":id", $id);
         $query->execute();
-        $isUserTaken = $query->fetchColumn(); 
+        $exists = $query->fetchColumn(); 
 
-        if ($isUserTaken) {
-            $_SESSION['error_message'] = 'E-mail já cadastrado.';
-            header("Location: create.php");
+        if (!$exists) {
+            $_SESSION['error_message'] = 'Doesn\'t exist';
+            header("Location: update.php");
             exit();
         } else {
-            $query = $conn->prepare("INSERT INTO cliente (nome, endereco, bairro, cidade, uf, cep, celular, email, datcad) VALUES (:nome, :endereco, :bairro, :cidade, :uf, :cep, :celular, :email, :datcad)");
+            $query = $conn->prepare("UPDATE cliente SET 
+                nome = :nome,
+                endereco = :endereco,
+                bairro = :bairro,
+                cidade = :cidade,
+                uf = :uf,
+                cep = :cep,
+                celular = :celular,
+                email = :email,
+                datcad = :datcad
+                WHERE id_cliente = :id");
 
             $query->bindParam(":nome", $name);
             $query->bindParam(":endereco", $address);
@@ -78,6 +91,7 @@ if (isset($_POST['sub'])) {
             $query->bindParam(":celular", $phone); 
             $query->bindParam(":email", $email);
             $query->bindParam(":datcad", $currentDate);
+            $query->bindParam(":id", $id); // Don't forget to bind :id again
 
             $query->execute(); 
             header("Location: create.php");
@@ -85,8 +99,9 @@ if (isset($_POST['sub'])) {
         }
     } catch (PDOException $e) {
         error_log("Database Error: " . $e->getMessage());
-        $_SESSION['error_message'] = "Ocorreu um erro ao cadastrar o cliente. Por favor, tente novamente.";
-        header("Location: update.php"); 
+        $_SESSION['error_message'] = "Ocorreu um erro ao atualizar o cliente. Por favor, tente novamente.";
+        header("Location: create.php"); 
         exit();
     }
-}?>
+}
+?>
