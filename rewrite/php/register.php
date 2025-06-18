@@ -1,5 +1,7 @@
 <?php 
 
+$user = new User();
+
 $name = $_POST['name'];
 $login = $_POST['login'];
 $password = $_POST['password'];
