@@ -1,0 +1,39 @@
+.main-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.register-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+  border-radius: 25px;
+  margin: 2%;
+  padding: 2%;
+  background-color: #24273a;
+  color: #cad3f5;
+}
+
+.register-container input{
+  border-radius: 10px;
+  border: 1px solid #91d7e3;
+  padding: 5px;
+  margin-bottom: 2%;
+}
+
+.title1{
+  margin-bottom: 2%;
+  font-size: 1.5rem;
+}
+
+#submit{
+  width: 100%;
+  color: #24273a;
+  background-color: #c6a0f6;
+  border: 0px solid black;
+}
