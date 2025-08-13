@@ -7,6 +7,8 @@ $data_cadastro = date('Y-m-d');
 
 include 'connection.php';
 
+$stmt = $conn->prepare("SELECT placa from ");
+
 $stmt = $conn->prepare("INSERT INTO automovel(modelo, ano, placa, data_cadastro) VALUES (?, ?, ?, ?)");
 $stmt->bindParam(1, $modelo);
 $stmt->bindParam(2, $ano);
