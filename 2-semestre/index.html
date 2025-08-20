@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="./styles/reset.css">
-  <title>Cadastro de veículos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <title>Tela Inicial</title>
 </head>
 <body>
   <div class="main-container">
-    <div class="register-container">
-      <h1 class="title1">Cadastro de Veículos</h1>
-      <form class="main-form" method="post" action="./cadastro.php">
-        <label for="model">Modelo do veiculo</label>
-        <input type="text" name="modelo" placeholder="Renault Kwid Zen" maxlength="30" required>
-        <br>
-        <label for="ano">Ano do veiculo</label>
-        <input type="number" name="ano" placeholder="2010" maxlength="4" minlength="4" required>
-        <br>
-        <label for="placa">Placa do veiculo</label>
-        <input type="text" name="placa" placeholder="CIE5J90" maxlength="8" minlength="8" required>  
-        <br>
-        <input type="submit" name="submit" value="submit" id="submit">
-      </form>
+    <div class="index-container">
+      <h1 class="title1">Tela Inicial</h1>
+      <button><a href="./cadastro.html">Cadastrar</a></button>
+      <button><a href="./alterar.html">Alterar</a></button>
     </div>
   </div>
 </body>

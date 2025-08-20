@@ -8,6 +8,8 @@ create table if not exists automovel
   ano int(4) not null,
   placa varchar(8) not null,
   data_cadastro date not null,
+  valor double(10, 2) not null,
+  cor varchar(15) not null,
   unique(placa),
   primary key(id)
 )
