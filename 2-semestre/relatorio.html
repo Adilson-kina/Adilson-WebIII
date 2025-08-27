@@ -12,6 +12,15 @@
   <span id="date"></span>
   <div class="main-container">
 
+    <script>
+      let date = new Date();
+      let day = date.getDate();
+      let month = date.getMonth() + 1;
+      let year = date.getFullYear();
+      let dateArray = [day, month, year];
+      let dateFormated = dateArray.join("/");
+      document.getElementById('date').innerHTML = dateFormated;
+  </script>
   </div>
 </body>
 </html>

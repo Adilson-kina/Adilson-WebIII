@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/reset.css">
     <title>Tela Inicial</title>
-    <script src="./script/accentColor.js"></script>
     <script src="./script/script.js"></script>
+    <script src="./script/accentColor.js"></script>
 </head>
 <body>
   <div class="main-container">
@@ -21,6 +21,15 @@
       <input type="color" name="bgColor" id="bgColor" value="#24273a" oninput="changeBg()">
       <label for="fontColor">Cor do texto</label>
       <input type="color" name="fontColor" id="fontColor" value="#cad3f5" oninput="changeTxt()">
+      <script>
+          let date = new Date();
+          let day = date.getDate();
+          let month = date.getMonth() + 1;
+          let year = date.getFullYear();
+          let dateArray = [day, month, year];
+          let dateFormated = dateArray.join("/");
+          document.getElementById('date').innerHTML = dateFormated;
+      </script>
     </div>
   </div>
 </body>
