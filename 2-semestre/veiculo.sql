@@ -10,6 +10,10 @@ create table if not exists automovel
   data_cadastro date not null,
   valor double(10, 2) not null,
   cor varchar(15) not null,
+  seguro int(1) not null default 0,
+  documento int(2) not null,
+  ocorrencia int(2) not null,
+  bloqueio int(1) not null default 0,
   unique(placa),
   primary key(id)
 )
