@@ -7,10 +7,10 @@ $valor = $_POST['valor'];
 $cor = $_POST['cor'];
 $documento = $_POST['doc'];
 $ocorrencia = $_POST['ocorrencia'];
-/* $bloqueio = isset($_POST['bloqueio']) ? 1 : 0; */
-/* $seguro = isset($_POST['seguro']) ? 1 : 0; */
-$bloqueio = 1; // Hardcode for test
-$seguro = 0; // Hardcode for test
+$bloqueio = isset($_POST['bloqueio']) ? 1 : 0;
+$seguro = isset($_POST['seguro']) ? 1 : 0;
+//$bloqueio = 1; // Hardcode for test
+//$seguro = 0; // Hardcode for test
 $data_cadastro = date('Y-m-d');
 
 include 'connection.php';

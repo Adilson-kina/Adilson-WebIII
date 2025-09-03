@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <title>Tela Inicial</title>
+    <script src="./script/script.js"></script>
+    <script src="./script/accentColor.js"></script>
+</head>
+<body>
+  <div class="main-container">
+    <div id="index-container">
+      <span id="date"></span>
+      <h1 class="title1">Tela Inicial</h1>
+      <button><a href="./cadastro.html">Cadastrar</a></button>
+      <button><a href="./alterar.html">Alterar</a></button>
+      <button><a href="./relatorio.php">Relatorio</a></button>
+      <label for="bgColor">Cor de fundo</label>
+      <input type="color" name="bgColor" id="bgColor" value="#24273a" oninput="changeBg()">
+      <label for="fontColor">Cor do texto</label>
+      <input type="color" name="fontColor" id="fontColor" value="#cad3f5" oninput="changeTxt()">
+      <script>
+          let date = new Date();
+          let day = date.getDate();
+          let month = date.getMonth() + 1;
+          let year = date.getFullYear();
+          let dateArray = [day, month, year];
+          let dateFormated = dateArray.join("/");
+          document.getElementById('date').innerHTML = dateFormated;
+      </script>
+    </div>
+  </div>
+</body>
+</html>
