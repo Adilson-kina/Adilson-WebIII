@@ -1,3 +1,8 @@
+@font-face {
+    font-family: '0xProto';
+    src: url('./fonts/0xProto-Regular.otf');
+}
+
 body{
     background-color: #cad3f5;
 }
@@ -10,16 +15,31 @@ body{
 }
 
 .container{
-    border-radius: 10%;
+    border-radius: 20px;
     background-color: #24273a;
     width: 50vw;
     height: 30vh;
+    outline: 1px solid #1e2030;
+}
+
+.date-container{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    justify-content: end;
+}
+
+#date{
+    color: #b7bdf8;
+    font-size: 1.2em;
 }
 
 .container h1{
+    font-family: '0xProto';
+    font-size: 2em;
     color: #cad3f5;
-    margin: 5%;
     text-align: center;
+    transform: translateY(100%);
 }
 
 .buttons{
@@ -33,9 +53,11 @@ body{
 
 .buttons button{
     color: #24273a;
+    font-size: 1.02em;
     background-color: #cad3f5;
-    border-radius: 10%;
-    padding: 5%;
+    border-radius: 10px;
+    width: 90%;
+    height: 20%;
 }
 
 .buttons button:hover{
