@@ -1,5 +1,9 @@
-let list =  ['./cadastro.html', './relatorio.html', './alteracao.html'];
+let list =  ['./cadastro.html', './relatorio.php', './alteracao.html'];
 let date;
+
+let year = document.getElementById('year');
+let price = document.getElementById('price');
+let documento = document.getElementById('documento');
 
 function start(){
         date = dateNow();
@@ -17,3 +21,14 @@ function dateNow(){
         return date.toLocaleDateString("en-GB");
 }
 
+year.oninput = function(){
+  if (year.value.length > 4) {
+    year.value = year.value.slice(0, 4);
+  }
+}
+
+documento.oninput = function(){
+  if (documento.value.length > 2) {
+    documento.value = documento.value.slice(0, 2);
+  }
+}

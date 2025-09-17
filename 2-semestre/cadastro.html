@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/style.css">
+  <title>Cadastro</title>
+</head>
+<body>
+  <div class="center">
+    <div class="container">
+      <div class="date-container">
+        <span id="date"></span>
+      </div>
+      <h1>Cadastro de Veículos</h1>
+      <form method='post' action='cadastro.php'>
+        <div class="inputs">
+            <label for="model">Modelo</label>
+            <input type="text" name="model" id="model" placeholder="Renault Kwid Zen" maxlength="30" required>
+
+            <label for="year">Ano</label>
+            <input type="number" name="year" id="year" placeholder="2010" min="1900" max="2025" required>
+
+            <label for="plate">Placa</label>
+            <input type="text" name="plate" id="plate" placeholder="J9KG890WYV" minlength="10" maxlength="10" required>
+
+            <label for="price">Preço</label>
+            <input type="number" name="price" id="price" placeholder="R$28.50" step="0.10" required>
+
+            <label for="color">Cor</label>
+            <input type="text" name="color" id="color" placeholder="Vermelho"  required>
+
+            <label for="secured">Seguro</label>
+            <input type="checkbox" name="secured" id="secured">
+
+            <label for="document">Documento</label>
+            <input type="number" name="document" id="document" placeholder="39" required>
+
+            <label for="ocurrency">Ocorrencia</label>
+            <select class="ocurrency" name="ocurrency" >
+              <option value="1">Nenhuma</option>
+              <option value="2">Colisão leve</option>
+              <option value="3">Colisão media</option>
+              <option value="4">Colisão grave</option>
+              <option value="5">Roubo sem recuperação</option>
+              <option value="6">Roubo com recuperação</option>
+              <option value="7">Desastre natural, com recuperação</option>
+              <option value="8">Desastre natural, sem recuperação</option>
+            </select>
+
+            <label for="blocked">Bloqueado</label>
+            <input type="checkbox" name="blocked" id="blocked">
+
+        </div>
+          <div class="submit">
+            <input type="submit" class="register" value="Cadastrar">
+          </div>
+      </form>
+    </div>
+  </div>
+  <script src="./script/script.js"></script>
+</body>
+</html>
