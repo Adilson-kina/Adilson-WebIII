@@ -21,6 +21,11 @@ add column documento int(2) not null,
 add column ocorrencia int(2) not null,
 add column bloqueio int(1) not null; -- por que aqui int e em cima bool?
 
+create table if not exists usuarios(
+  id int auto_increment primary key not null,
+  email varchar(60) not null,
+  password varchar(512) not null
+);
 
 -- Aparentemente int(numero) esta deprecado
 -- https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-17.html#mysqld-8-0-17-deprecation-removal

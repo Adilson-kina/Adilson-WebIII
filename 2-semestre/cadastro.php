@@ -14,7 +14,7 @@ $blocked = isset($_POST['blocked']) ? 1 : 0;
 $secured = isset($_POST['secured']) ? 1 : 0;
 $register_date = date('Y-m-d');
 
-$query = $conn->prepare('SELECT placa from veiculos WHERE placa = ?');
+$query = $conn->prepare('SELECT placa FROM veiculos WHERE placa = ?');
 $query->bindParam(1, $plate);
 $query->execute();
 if (!$query->fetch()) {

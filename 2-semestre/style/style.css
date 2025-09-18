@@ -43,6 +43,14 @@ body{
   text-align: center;
 }
 
+.container a, .container a:active{
+  color: #cad3f5;
+}
+
+.container a:hover{
+  color: #8aadf4;
+}
+
 .start-title{
   transform: translateY(100%);
 }

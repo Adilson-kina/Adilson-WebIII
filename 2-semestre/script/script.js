@@ -1,4 +1,4 @@
-let list =  ['./cadastro.html', './relatorio.php', './alteracao.html'];
+let list =  ['./entrar.html','./cadastro.html', './relatorio.php', './alteracao.html'];
 let date;
 
 let year = document.getElementById('year');
