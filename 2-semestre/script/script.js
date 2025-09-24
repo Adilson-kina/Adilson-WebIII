@@ -18,6 +18,7 @@ function changeBG(){
 }
 
 function start(){
+        console.log("hello");
         date = dateNow();
         document.getElementById('date').innerHTML = date;
         change();
@@ -68,4 +69,4 @@ function getCookie(cname) {
     }
   }
   return "";
-
+}
