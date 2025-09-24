@@ -20,13 +20,13 @@
 
       $query = $conn->prepare('SELECT id, modelo, ano, placa, cor from veiculos');
       $query->execute();
-      $res = $query->fetch(PDO::FETCH_ASSOC);
+      $res = $query->fetchall(PDO::FETCH_ASSOC);
       $id = $res["id"];
       $model = $res["modelo"];
       $year = $res["ano"];
       $plate = $res["placa"];
       $color = $res["cor"];
-      echo "
+      /*echo "
       <table class='fetched'>
         <tr>
           <th>Id</th>
@@ -42,8 +42,24 @@
           <td>${plate}</td>
           <td>${color}</td>
         </tr>
-      </table>
-      "
+        </table>"; */
+      echo "
+      <table class='fetched'>
+        <tr>
+          <th>Id</th>
+          <th>Modelo</th>
+          <th>Ano</th>
+          <th>Placa</th>
+          <th>Cor</th>
+        </tr>";
+      foreach ($res as $row) {
+        echo "<tr>";
+        foreach ($row as $columns) {
+          echo "<td>${columns}</td>";
+        }
+        echo "</tr>";
+      } 
+      echo "</table>";
       ?>
     </div>
   </div>

@@ -16,12 +16,15 @@ if ($query->fetch()) {
   $query->bindParam(1, $email);
   $query->execute();
   $res = $query->fetch(PDO::FETCH_ASSOC);
-  if(password_verify($pwd, $res['password'])){
+  if($pwd == $res['password']){
     $_SESSION["login"] = $email;
     header("Location: links.html");
   }
   else{
-    echo "<script>alert('senha incorreta')</script>";
+    echo "<script>alert('senha incorreta'); window.location.href='entrar.html'</script>";
   }
+}
+else {
+  echo "<script>alert('usuario nao cadastrado'); window.location.href='entrar.html'</script>";
 }
 ?>

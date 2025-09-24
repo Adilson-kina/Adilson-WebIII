@@ -19,7 +19,7 @@ if ($blocked) {
     $query->bindParam(1, $price);
     $query->bindParam(2, $plate);
     $query->execute();
-    header("Location: index.html");
+    header("Location: links.html");
   }
 
 }

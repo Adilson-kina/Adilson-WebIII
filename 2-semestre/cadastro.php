@@ -30,7 +30,7 @@ if (!$query->fetch()) {
   $query->bindParam(9, $ocurrency);
   $query->bindParam(10, $blocked);
   $query->execute();
-  header("Location: index.html");
+  header("Location: links.html");
 
 }
 else{

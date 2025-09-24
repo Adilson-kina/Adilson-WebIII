@@ -156,3 +156,9 @@ table, th, td{
   border: 2px solid #c6a0f6;
   text-align: center;
 }
+
+.top-right{
+  background-color: red;
+  width: 100vw;
+  height: 100vh;
+}
