@@ -5,9 +5,23 @@ let year = document.getElementById('year');
 let price = document.getElementById('price');
 let documento = document.getElementById('documento');
 
+color.onchange = change;
+
+function change(){
+  let body = document.getElementById('body');
+  body.style.backgroundColor = getCookie('bg');
+}
+
+function changeBG(){
+  let color = document.getElementById('color');
+  setCookie('bg', color.value);
+}
+
 function start(){
         date = dateNow();
         document.getElementById('date').innerHTML = date;
+        change();
+        changeBG();
 }
 
 window.onload = start;
